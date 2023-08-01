@@ -1,0 +1,17 @@
+﻿<Window x:Class="TowerDefense.GameControl.View.InGameMenuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TowerDefense.GameControl.View"
+        mc:Ignorable="d"
+        Title="InGameMenuWindow" Height="450" Width="800"  WindowStyle="None" WindowStartupLocation="CenterOwner" AllowsTransparency="True">
+    <Grid>
+        <StackPanel Margin="251,75,251,75">
+            <Button Click="Save_Click" Content="Save" HorizontalAlignment="Center" Margin="0,40,0,20"  VerticalAlignment="Top" Height="50" Width="112"/>
+            <Button Click="Exit_Click" Content="Exit" HorizontalAlignment="Center" Margin="0,20,0,20" VerticalAlignment="Center" Height="50" Width="112" />
+            <Button Click="Return_Click" Content="Return To Game" Margin="0,20,0,20" VerticalAlignment="Bottom" Height="50" Width="112"/>
+        </StackPanel>
+        
+    </Grid>
+</Window>

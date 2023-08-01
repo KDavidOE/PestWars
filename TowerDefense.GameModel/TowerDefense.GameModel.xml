@@ -1,0 +1,527 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TowerDefense.GameModel</name>
+    </assembly>
+    <members>
+        <member name="T:TowerDefense.GameModel.Enemy">
+            <summary>
+            A class which contains basic variables for enemies.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.Enemy.Health">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.Enemy.Damage">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.Enemy.Speed">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.Enemy.Xpos">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.Enemy.Ypos">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.Enemy.MaxHealth">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.Enemy.SlowTimer">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.Enemy.ZombieType">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameModel.Enemy.CopyFrom(TowerDefense.GameModel.IEnemy)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TowerDefense.GameModel.EnemyType">
+            <summary>
+            Represents different enemy types.
+            </summary>
+        </member>
+        <member name="F:TowerDefense.GameModel.EnemyType.NormalZombie">
+            <summary>
+            Represents normal zombies.
+            </summary>
+        </member>
+        <member name="F:TowerDefense.GameModel.EnemyType.FastZombie">
+            <summary>
+            Represents fast zombies.
+            </summary>
+        </member>
+        <member name="F:TowerDefense.GameModel.EnemyType.BigZombie">
+            <summary>
+            Represents big zombies.
+            </summary>
+        </member>
+        <member name="F:TowerDefense.GameModel.EnemyType.Necromancer">
+            <summary>
+            Represents the Necromancer.
+            </summary>
+        </member>
+        <member name="T:TowerDefense.GameModel.GameBaseModel">
+            <summary>
+            Game model which represents the game's base.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameModel.GameBaseModel.#ctor(System.Double,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameModel.GameBaseModel"/> class.
+            </summary>
+            <param name="gamewidth">The width of the game area.</param>
+            <param name="gameheight">The height of the game area.</param>
+        </member>
+        <member name="P:TowerDefense.GameModel.GameBaseModel.Enemies">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.GameBaseModel.Towers">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.GameBaseModel.SelectedTower">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.GameBaseModel.EditedTower">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.GameBaseModel.BaseHealth">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.GameBaseModel.Wave">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.GameBaseModel.Money">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.GameBaseModel.IsPaused">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.GameBaseModel.Map">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.GameBaseModel.GameWidth">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.GameBaseModel.GameHeight">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.GameBaseModel.TileSize">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.GameBaseModel.Score">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.GameBaseModel.MapShopRatio">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.GameBaseModel.ShopTileHeight">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.GameBaseModel.ShopTileWidth">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.GameBaseModel.StartPoint">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.GameBaseModel.EndPoint">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.GameBaseModel.RefreshRate">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.GameBaseModel.AvailableTowers">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.GameBaseModel.AvailableEnemies">
+            <inheritdoc/>
+        </member>
+        <member name="T:TowerDefense.GameModel.IEnemy">
+            <summary>
+            Interface for enemies to declare necessery variables.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IEnemy.Health">
+            <summary>
+            Gets or Sets the health of an enemy object.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IEnemy.Damage">
+            <summary>
+            Gets or Sets the damage of an enemy object.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IEnemy.Speed">
+            <summary>
+            Gets or Sets the speed of an enemy object.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IEnemy.Xpos">
+            <summary>
+            Gets or Sets the position of an enemy object. This referes to a specific map tile horizontally.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IEnemy.Ypos">
+            <summary>
+            Gets or Sets the position of an enemy object. This referes to a specific map tile vertically.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IEnemy.MaxHealth">
+            <summary>
+            Gets or Sets the maximum health of the enemy unit.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IEnemy.SlowTimer">
+            <summary>
+            Gets or Sets the slowing time.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IEnemy.ZombieType">
+            <summary>
+            Gets or Sets the zombie's type.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameModel.IEnemy.CopyFrom(TowerDefense.GameModel.IEnemy)">
+            <summary>
+            Copies the values of another enemy into the new one.
+            </summary>
+            <param name="other">Other enemy.</param>
+        </member>
+        <member name="T:TowerDefense.GameModel.IGameModel">
+            <summary>
+            Interface for game model for declaring necessery variables for the game.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IGameModel.Enemies">
+            <summary>
+            Gets a collection of enemies.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IGameModel.Towers">
+            <summary>
+            Gets a collection of towers.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IGameModel.StartPoint">
+            <summary>
+            Gets or Sets the position of the starting point where enemies are coming from.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IGameModel.EndPoint">
+            <summary>
+            Gets or Sets the position of the end point which is the base.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IGameModel.SelectedTower">
+            <summary>
+            Gets or Sets the selected tower in the game.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IGameModel.EditedTower">
+            <summary>
+            Gets or Sets the selected tower in the game.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IGameModel.BaseHealth">
+            <summary>
+            Gets or Sets the health of the base.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IGameModel.Wave">
+            <summary>
+            Gets or Sets the number of waves in the game.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IGameModel.Money">
+            <summary>
+            Gets or Sets the player's money.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IGameModel.IsPaused">
+            <summary>
+            Gets or sets a value indicating whether if the game is paused or not.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IGameModel.Map">
+            <summary>
+            Gets or sets the game map.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IGameModel.GameWidth">
+            <summary>
+            Gets or Sets the width of the game area, including the shop area.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IGameModel.GameHeight">
+            <summary>
+            Gets or Sets the height of the game area, including the shop area.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IGameModel.TileSize">
+            <summary>
+            Gets or Sets the tile size of the game map.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IGameModel.AvailableTowers">
+            <summary>
+            Gets available towers.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IGameModel.Score">
+            <summary>
+            Gets or Sets the actual score of the player.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IGameModel.AvailableEnemies">
+            <summary>
+            Gets available enemies.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IGameModel.MapShopRatio">
+            <summary>
+            Gets the width ratio between the gaming area and the shop.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IGameModel.ShopTileHeight">
+            <summary>
+            Gets the height of one shop tile.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IGameModel.ShopTileWidth">
+            <summary>
+            Gets the width of one shop tile.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IGameModel.RefreshRate">
+            <summary>
+            Gets the number which represents how much fps will the game run on.
+            </summary>
+        </member>
+        <member name="T:TowerDefense.GameModel.IProjectile">
+            <summary>
+            Interface for projectiles.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IProjectile.Target">
+            <summary>
+            Gets or Sets the targeted unit.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IProjectile.Shooter">
+            <summary>
+            Gets or Sets the shooter of the projectile.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IProjectile.Position">
+            <summary>
+            Gets or Sets the position of the projectile.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IProjectile.Angle">
+            <summary>
+            Gets or Sets the angle of the projectile relative to shooter-target position.
+            </summary>
+        </member>
+        <member name="T:TowerDefense.GameModel.ITower">
+            <summary>
+            Interface for towers to declare necessery variables.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.ITower.Damage">
+            <summary>
+            Gets or Sets the damage of a tower.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.ITower.Range">
+            <summary>
+            Gets or Sets the range of a tower.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.ITower.TileX">
+            <summary>
+            Gets or Sets the position of a tower object. This referes to a specific map tile horizontally.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.ITower.TileY">
+            <summary>
+            Gets or Sets the position of a tower object. This referes to a specific map tile vertically.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.ITower.Price">
+            <summary>
+            Gets or Sets the price of a tower.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.ITower.Projectiles">
+            <summary>
+            Gets the collection of all the projectiles that has been shot and did not arrived at destination.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.ITower.AttackInterval">
+            <summary>
+            Gets or Sets the interval between each attack of the tower.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.ITower.AttackTimer">
+            <summary>
+            Gets or sets the number of frames until the tower attacks again.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.ITower.DefenseType">
+            <summary>
+            Gets or Sets the defense tower's type.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameModel.ITower.CopyFrom(TowerDefense.GameModel.ITower)">
+            <summary>
+            Copies the values of another tower into the new one.
+            </summary>
+            <param name="other">Other tower.</param>
+        </member>
+        <member name="T:TowerDefense.GameModel.Map">
+            <summary>
+            Represents the state of the game's tiles.
+            </summary>
+        </member>
+        <member name="F:TowerDefense.GameModel.Map.BUILDABLE">
+            <summary>
+            Represents a buildable tile on the map.
+            </summary>
+        </member>
+        <member name="F:TowerDefense.GameModel.Map.ROAD_UP">
+            <summary>
+            Represents an upwards pointing road on the map.
+            </summary>
+        </member>
+        <member name="F:TowerDefense.GameModel.Map.ROAD_DOWN">
+            <summary>
+            Represents a downwards pointing road on the map.
+            </summary>
+        </member>
+        <member name="F:TowerDefense.GameModel.Map.ROAD_LEFT">
+            <summary>
+            Represents a leftwards pointing road on the map.
+            </summary>
+        </member>
+        <member name="F:TowerDefense.GameModel.Map.ROAD_RIGHT">
+            <summary>
+            Represents a rightwards pointing road on the map.
+            </summary>
+        </member>
+        <member name="F:TowerDefense.GameModel.Map.OCCUPIED">
+            <summary>
+            Represents an occupied tile on the map.
+            </summary>
+        </member>
+        <member name="F:TowerDefense.GameModel.Map.OBSTACLE">
+            <summary>
+            Represents an obstacle on the map.
+            </summary>
+        </member>
+        <member name="T:TowerDefense.GameModel.Projectile">
+            <summary>
+            Class that represents the projectiles that towers shoot.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameModel.Projectile.#ctor(TowerDefense.GameModel.ITower,TowerDefense.GameModel.IEnemy,System.Windows.Point)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameModel.Projectile"/> class.
+            </summary>
+            <param name="shooter">The tower which creates the projectile.</param>
+            <param name="target">The target which will be damaged.</param>
+            <param name="point">The position of the projectile.</param>
+        </member>
+        <member name="P:TowerDefense.GameModel.Projectile.Target">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.Projectile.Shooter">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.Projectile.Position">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.Projectile.Angle">
+            <inheritdoc/>
+        </member>
+        <member name="T:TowerDefense.GameModel.Tower">
+            <summary>
+            A class which contains basic variables for towers.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.Tower.Damage">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.Tower.Range">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.Tower.Price">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.Tower.TileX">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.Tower.TileY">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.Tower.Projectiles">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.Tower.AttackInterval">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.Tower.AttackTimer">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.GameModel.Tower.DefenseType">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameModel.Tower.CopyFrom(TowerDefense.GameModel.ITower)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TowerDefense.GameModel.TowerType">
+            <summary>
+            Enum that represents different types of towers.
+            </summary>
+        </member>
+        <member name="F:TowerDefense.GameModel.TowerType.Archer">
+            <summary>
+            Represents archer tower.
+            </summary>
+        </member>
+        <member name="F:TowerDefense.GameModel.TowerType.Cannon">
+            <summary>
+            Represents cannons.
+            </summary>
+        </member>
+        <member name="F:TowerDefense.GameModel.TowerType.Catapult">
+            <summary>
+            Represents catapults.
+            </summary>
+        </member>
+        <member name="F:TowerDefense.GameModel.TowerType.Doctor">
+            <summary>
+            Represents doctors.
+            </summary>
+        </member>
+        <member name="F:TowerDefense.GameModel.TowerType.Hunter">
+            <summary>
+            Represents hunters.
+            </summary>
+        </member>
+        <member name="F:TowerDefense.GameModel.TowerType.Knight">
+            <summary>
+            Represents knights.
+            </summary>
+        </member>
+        <member name="F:TowerDefense.GameModel.TowerType.Water">
+            <summary>
+            Represents water trap.
+            </summary>
+        </member>
+        <member name="F:TowerDefense.GameModel.TowerType.Wizard">
+            <summary>
+            Represents wizards.
+            </summary>
+        </member>
+    </members>
+</doc>

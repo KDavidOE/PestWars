@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TowerDefense.GameRenderer</name>
+    </assembly>
+    <members>
+        <member name="T:TowerDefense.GameRenderer.Renderer">
+            <summary>
+            Class that renders all game objects.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameRenderer.Renderer.#ctor(TowerDefense.GameModel.IGameModel)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameRenderer.Renderer"/> class.
+            </summary>
+            <param name="model">Current game mode.</param>
+        </member>
+        <member name="M:TowerDefense.GameRenderer.Renderer.Reset">
+            <summary>
+            Resets drawing variables.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameRenderer.Renderer.BuildDrawing">
+            <summary>
+            Bulder for drawing object which consist game elements.
+            </summary>
+            <returns>Returns drawing.</returns>
+        </member>
+        <member name="M:TowerDefense.GameRenderer.Renderer.BuildTextDisplay(System.Windows.Media.DrawingContext)">
+            <summary>
+            Creates several Formatted text to display game informations.
+            </summary>
+            <param name="drawingContext">Context of all drawings.</param>
+        </member>
+    </members>
+</doc>

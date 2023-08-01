@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TowerDefense.GameLogicTest</name>
+    </assembly>
+    <members>
+        <member name="T:GameLogicTest.Tests">
+            <summary>
+            Provides unit tests for this.logic.
+            </summary>
+        </member>
+        <member name="M:GameLogicTest.Tests.Setup">
+            <summary>
+            Sets up the tests.
+            </summary>
+        </member>
+        <member name="M:GameLogicTest.Tests.CanPlaceTest">
+            <summary>
+            Tests if loading is properly passed on to the this.repo.
+            </summary>
+        </member>
+        <member name="M:GameLogicTest.Tests.WinTest">
+            <summary>
+            Tests if we correctly detect wins.
+            </summary>
+        </member>
+        <member name="M:GameLogicTest.Tests.LossTest">
+            <summary>
+            Tests if we correctly detect the game being lost.
+            </summary>
+        </member>
+        <member name="M:GameLogicTest.Tests.WaveEndedTest">
+            <summary>
+            Tests if the game correctly recognizes that the wave hasn't ended yet.
+            </summary>
+        </member>
+        <member name="M:GameLogicTest.Tests.ShopSelectTest">
+            <summary>
+            Tests the shop selector mechanics.
+            </summary>
+        </member>
+    </members>
+</doc>

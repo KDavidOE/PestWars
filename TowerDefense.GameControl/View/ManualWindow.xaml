@@ -1,0 +1,86 @@
+﻿<Window x:Class="TowerDefense.GameControl.View.ManualWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TowerDefense.GameControl.View"
+        xmlns:data="clr-namespace:TowerDefense.GameControl.Data"
+        xmlns:vm="clr-namespace:TowerDefense.GameControl.VM"
+        mc:Ignorable="d"
+      Title="ManualWindow" Height="1080" Width="1920" WindowState="Maximized" WindowStyle="None" AllowsTransparency="True">
+    <Window.Resources>
+        <vm:ManualWindowViewModel x:Key="VM"/>
+        <DataTemplate x:Key="listTemplate" DataType="{x:Type data:TowerData}">
+            <Border BorderThickness="1" BorderBrush="Black" Background="LightBlue" Opacity="0.9">
+                <DockPanel  VerticalAlignment="Center" HorizontalAlignment="Stretch" >
+                    <Label Content="{Binding Path=TowerName}"  HorizontalContentAlignment="Left" HorizontalAlignment="Center" VerticalAlignment="Stretch" VerticalContentAlignment="Center"  />
+                    <Label Content= "{Binding Path=TowerDamage}" ContentStringFormat="Damage: {0}" DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Content="{Binding Path=TowerAttackSpeed}" ContentStringFormat="Time Between attacks:: {0}" DockPanel.Dock="Top" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Stretch" VerticalContentAlignment="Center"  />
+                    <Label Content="{Binding Path=TowerRange}" ContentStringFormat="Range: {0}"  DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Content="{Binding Path=TowerPrice}" ContentStringFormat="Price: {0}" DockPanel.Dock="Top" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Stretch" VerticalContentAlignment="Center"  />
+                </DockPanel>
+            </Border>
+        </DataTemplate>
+        <DataTemplate x:Key="enemyTemplate" DataType="{x:Type data:EnemyData}" >
+            <Border BorderThickness="1" BorderBrush="Black" Background="IndianRed" Opacity="0.9">
+                <DockPanel  VerticalAlignment="Center" HorizontalAlignment="Stretch" >
+                    <Label Content="{Binding Path=Name}"  HorizontalContentAlignment="Left" HorizontalAlignment="Center" VerticalAlignment="Stretch" VerticalContentAlignment="Center"  />
+                    <Label Content= "{Binding Path=Damage}" ContentStringFormat="Damage: {0}" DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Content="{Binding Path=Speed}" ContentStringFormat="Speed:: {0}" DockPanel.Dock="Top" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Stretch" VerticalContentAlignment="Center"  />
+                    <Label Content="{Binding Path=Health}" ContentStringFormat="Health: {0}"  DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+                </DockPanel>
+            </Border>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource VM}">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Viewbox>
+            <Label>PestWars</Label>
+        </Viewbox>
+        <ScrollViewer Grid.Column="0" Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="20,20,20,140">
+            <TextBlock TextWrapping="Wrap" FontSize="20" FontWeight="Bold" Background="Gray" Opacity="0.8">
+            The dead of Budapest are rising from their graves. The evil Necromancer resurrected the victims of the black plague and trying to take over the world.
+            <LineBreak/>
+            The last defense of the world is Buda castle and the army of the dead are coming. You have to hold your ground and defeat the evil Necromancer 
+            and its creations. Build towers, recruit wizards , plague doctors and many more to win this battle! 
+            <LineBreak/><LineBreak/>
+            
+            Rules: <LineBreak/>There are 10 waves in the game. Your goal is to eliminate all zombies before they break through your castle's door. The castle has 100 hit points, after an enemy
+             damages it, the attacker will immediately die. On the last wave you will have to face with the Necromancer. 
+            <LineBreak/>Throughout the game you can earn coins by killing enemies, which will 
+            unlock better towers. The score is measured by how fast you clear each vawe.
+            <LineBreak/>
+            If you manage to destroy everything you can save your score that will be displayed on the scoreboard list.
+            <LineBreak/>
+            <LineBreak/>
+            Controls:
+            <LineBreak/>
+            Left Mouse Click: Interact with towers on the map and in the shop.<LineBreak/>
+            ESC button: Pauses the game and displays the in-game menu.
+            </TextBlock>
+        </ScrollViewer>
+        <ScrollViewer Grid.RowSpan="2" Grid.Column="1" CanContentScroll="True" VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <ItemsControl ItemsSource="{Binding Towers}" ItemTemplate="{StaticResource listTemplate}" Grid.Row="0"/>
+                <ItemsControl ItemsSource="{Binding Enemies}" ItemTemplate="{StaticResource enemyTemplate}" Grid.Row="1"/>
+            </Grid>
+        </ScrollViewer>
+
+        <Button Grid.Row="1" Width="150" Height="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,20,0,20" Content="Back" Click="Button_Click"/>
+
+
+
+    </Grid>
+</Window>
+

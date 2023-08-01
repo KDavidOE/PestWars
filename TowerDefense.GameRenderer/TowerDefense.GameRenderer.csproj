@@ -1,0 +1,104 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>TowerDefense.GameRenderer.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Archer.png" />
+    <None Remove="Images\ArcherProj.png" />
+    <None Remove="Images\BigZombie.png" />
+    <None Remove="Images\Cannon.png" />
+    <None Remove="Images\CannonProj.png" />
+    <None Remove="Images\castle.png" />
+    <None Remove="Images\Catapult.png" />
+    <None Remove="Images\CatapultProj.png" />
+    <None Remove="Images\coin.png" />
+    <None Remove="Images\curvedownleft.png" />
+    <None Remove="Images\curvedownright.png" />
+    <None Remove="Images\curveupleft.png" />
+    <None Remove="Images\curveupright.png" />
+    <None Remove="Images\Doctor.png" />
+    <None Remove="Images\DoctorProj.png" />
+    <None Remove="Images\egyenesut.png" />
+    <None Remove="Images\fastzombie.png" />
+    <None Remove="Images\Hunter.png" />
+    <None Remove="Images\HunterProj.png" />
+    <None Remove="Images\Knight.png" />
+    <None Remove="Images\KnightProj.png" />
+    <None Remove="Images\life.png" />
+    <None Remove="Images\madar.png" />
+    <None Remove="Images\Necromancer.png" />
+    <None Remove="Images\NormalZombie.png" />
+    <None Remove="Images\pause.png" />
+    <None Remove="Images\ShopItemFrame.png" />
+    <None Remove="Images\ShopItemFrameDenied.png" />
+    <None Remove="Images\Tree.png" />
+    <None Remove="Images\village.png" />
+    <None Remove="Images\vizesarokfugg.png" />
+    <None Remove="Images\vizesarokvizszint.png" />
+    <None Remove="Images\vizszintesut.png" />
+    <None Remove="Images\Water.png" />
+    <None Remove="Images\WaterTile.png" />
+    <None Remove="Images\Wizard.png" />
+    <None Remove="Images\WizardProj.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Archer.png" />
+    <EmbeddedResource Include="Images\ArcherProj.png" />
+    <EmbeddedResource Include="Images\BigZombie.png" />
+    <EmbeddedResource Include="Images\Cannon.png" />
+    <EmbeddedResource Include="Images\CannonProj.png" />
+    <EmbeddedResource Include="Images\castle.png" />
+    <EmbeddedResource Include="Images\Catapult.png" />
+    <EmbeddedResource Include="Images\CatapultProj.png" />
+    <EmbeddedResource Include="Images\coin.png" />
+    <EmbeddedResource Include="Images\curvedownleft.png" />
+    <EmbeddedResource Include="Images\curvedownright.png" />
+    <EmbeddedResource Include="Images\curveupleft.png" />
+    <EmbeddedResource Include="Images\curveupright.png" />
+    <EmbeddedResource Include="Images\Doctor.png" />
+    <EmbeddedResource Include="Images\DoctorProj.png" />
+    <EmbeddedResource Include="Images\egyenesut.png" />
+    <EmbeddedResource Include="Images\FastZombie.png" />
+    <EmbeddedResource Include="Images\Hunter.png" />
+    <EmbeddedResource Include="Images\HunterProj.png" />
+    <EmbeddedResource Include="Images\Knight.png" />
+    <EmbeddedResource Include="Images\KnightProj.png" />
+    <EmbeddedResource Include="Images\life.png" />
+    <EmbeddedResource Include="Images\madar.png" />
+    <EmbeddedResource Include="Images\Necromancer.png" />
+    <EmbeddedResource Include="Images\NormalZombie.png" />
+    <EmbeddedResource Include="Images\pause.png" />
+    <EmbeddedResource Include="Images\ShopItemFrame.png" />
+    <EmbeddedResource Include="Images\ShopItemFrameDenied.png" />
+    <EmbeddedResource Include="Images\Tree.png" />
+    <EmbeddedResource Include="Images\village.png" />
+    <EmbeddedResource Include="Images\vizszintesut.png" />
+    <EmbeddedResource Include="Images\Water.png" />
+    <EmbeddedResource Include="Images\WaterTile.png" />
+    <EmbeddedResource Include="Images\Wizard.png" />
+    <EmbeddedResource Include="Images\WizardProj.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TowerDefense.GameModel\TowerDefense.GameModel.csproj" />
+  </ItemGroup>
+
+</Project>

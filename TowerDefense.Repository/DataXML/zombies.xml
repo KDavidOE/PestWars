@@ -1,0 +1,26 @@
+<unit>
+  <zombie>
+    <name>BigZombie</name>
+    <health>700</health>
+    <damage>10</damage>
+    <speed>4</speed>
+  </zombie>
+  <zombie>
+    <name>FastZombie</name>
+    <health>350</health>
+    <damage>6</damage>
+    <speed>7</speed>
+  </zombie>
+  <zombie>
+    <name>NormalZombie</name>
+    <health>500</health>
+    <damage>8</damage>
+    <speed>4</speed>
+  </zombie>
+  <zombie>
+    <name>Necromancer</name>
+    <health>8000</health>
+    <damage>50</damage>
+    <speed>6</speed>
+  </zombie>
+</unit>

@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TowerDefense.Repository</name>
+    </assembly>
+    <members>
+        <member name="T:TowerDefense.Repository.IStorageRepository">
+            <summary>
+            Interface for game storage which saves and loads the game.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.Repository.IStorageRepository.CurrentGame">
+            <summary>
+            Gets  the current game model.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.Repository.IStorageRepository.HighScores">
+            <summary>
+            Gets a collection of all time highscores.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.Repository.IStorageRepository.CreateNewGame">
+            <summary>
+            Creates a new game.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.Repository.IStorageRepository.LoadGame(System.String)">
+            <summary>
+            Loads previously saved game.
+            </summary>
+            <param name="saveFilePath">The path to that save file.</param>
+            <returns>Returns true if loading was successful.</returns>
+        </member>
+        <member name="M:TowerDefense.Repository.IStorageRepository.SaveGame(System.String)">
+            <summary>
+            Saves the current game.
+            </summary>
+            <param name="saveFilePath">The path to the save file.</param>
+            <returns>Returns true if saving was successful.</returns>
+        </member>
+        <member name="M:TowerDefense.Repository.IStorageRepository.LoadHighscores(System.String)">
+            <summary>
+            Loads high scores.
+            </summary>
+            <param name="highscorePath">The path to the highscores file.</param>
+            <returns>Returns true if loading was successful.</returns>
+        </member>
+        <member name="M:TowerDefense.Repository.IStorageRepository.SaveHighscores(System.String)">
+            <summary>
+            Saves the current score of the game.
+            </summary>
+            <param name="playerName">The path to the highscores file.</param>
+            <returns>Returns true if saving was successful.</returns>
+        </member>
+        <member name="M:TowerDefense.Repository.IStorageRepository.LoadEnemies">
+            <summary>
+            Gets the enemies that are currently used in the game files.
+            </summary>
+            <returns>Returns a collection of IEnemy.</returns>
+        </member>
+        <member name="M:TowerDefense.Repository.IStorageRepository.LoadTowers">
+            <summary>
+            Gets the towers that are currently in the game files.
+            </summary>
+            <returns>Return a collection of ITower.</returns>
+        </member>
+        <member name="T:TowerDefense.Repository.PlayerStats">
+            <summary>
+            Class to represent the player.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.Repository.PlayerStats.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.Repository.PlayerStats"/> class.
+            </summary>
+            <param name="name">The name of the player.</param>
+            <param name="score">The score of the player.</param>
+        </member>
+        <member name="P:TowerDefense.Repository.PlayerStats.Name">
+            <summary>
+            Gets or Sets the name of the player.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.Repository.PlayerStats.Score">
+            <summary>
+            Gets or Sets the score of the player.
+            </summary>
+        </member>
+        <member name="T:TowerDefense.Repository.StorageRepository">
+            <summary>
+            Class which implements loading and saving.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.Repository.StorageRepository.#ctor(TowerDefense.GameModel.IGameModel)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.Repository.StorageRepository"/> class.
+            </summary>
+            <param name="model">The base model of the game.</param>
+        </member>
+        <member name="P:TowerDefense.Repository.StorageRepository.CurrentGame">
+            <inheritdoc/>
+        </member>
+        <member name="P:TowerDefense.Repository.StorageRepository.HighScores">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.Repository.StorageRepository.CreateNewGame">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.Repository.StorageRepository.LoadEnemies">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.Repository.StorageRepository.LoadGame(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.Repository.StorageRepository.LoadHighscores(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.Repository.StorageRepository.LoadTowers">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.Repository.StorageRepository.SaveGame(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.Repository.StorageRepository.SaveHighscores(System.String)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

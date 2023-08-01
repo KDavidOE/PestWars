@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>TowerDefense.Repository.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="DataXML\map1.xml" />
+    <None Remove="DataXML\map2.xml" />
+    <None Remove="DataXML\map3.xml" />
+    <None Remove="DataXML\map4.xml" />
+    <None Remove="DataXML\map5.xml" />
+    <None Remove="DataXML\towers.xml" />
+    <None Remove="DataXML\zombies.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="DataXML\towers.xml" />
+    <EmbeddedResource Include="DataXML\zombies.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="DataXML\map1.xml" />
+    <EmbeddedResource Include="DataXML\map2.xml" />
+    <EmbeddedResource Include="DataXML\map3.xml" />
+    <EmbeddedResource Include="DataXML\map4.xml" />
+    <EmbeddedResource Include="DataXML\map5.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TowerDefense.GameModel\TowerDefense.GameModel.csproj" />
+  </ItemGroup>
+
+</Project>

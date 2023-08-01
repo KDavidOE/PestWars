@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>disable</Nullable>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <Win32Resource></Win32Resource>
+    <ApplicationIcon>GameIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>TowerDefense.GameControl.xml</DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="WindowResources\fomenu.png" />
+    <None Remove="WindowResources\GameIcon.ico" />
+    <None Remove="WindowResources\GameIcon.png" />
+    <None Remove="WindowResources\Glorious_morning.wav" />
+    <None Remove="WindowResources\inGameMenuBG.png" />
+    <None Remove="WindowResources\scoreBoardBg.PNG" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="WindowResources\Glorious_morning.wav" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="WindowResources\GameIcon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="WindowResources\fomenu.png" />
+    <Resource Include="WindowResources\inGameMenuBG.png" />
+    <Resource Include="WindowResources\scoreBoardBg.PNG" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommonServiceLocator" Version="2.0.6" />
+    <PackageReference Include="MvvmLightLibsStd10" Version="5.4.1.1" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TowerDefense.GameLogic\TowerDefense.GameLogic.csproj" />
+    <ProjectReference Include="..\TowerDefense.GameModel\TowerDefense.GameModel.csproj" />
+    <ProjectReference Include="..\TowerDefense.GameRenderer\TowerDefense.GameRenderer.csproj" />
+    <ProjectReference Include="..\TowerDefense.Repository\TowerDefense.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

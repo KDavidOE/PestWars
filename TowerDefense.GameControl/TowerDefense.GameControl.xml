@@ -1,0 +1,475 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TowerDefense.GameControl</name>
+    </assembly>
+    <members>
+        <member name="T:TowerDefense.GameControl.App">
+            <summary>
+            Interaction logic for App.xaml.
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.App.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameControl.App"/> class.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:TowerDefense.GameControl.Data.EnemyData">
+            <summary>
+            Class that represents enemy data.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.Data.EnemyData.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameControl.Data.EnemyData"/> class.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameControl.Data.EnemyData.Name">
+            <summary>
+            Gets or Sets the name of the enemy.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameControl.Data.EnemyData.Speed">
+            <summary>
+            Gets or Sets speed of the enemy.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameControl.Data.EnemyData.Health">
+            <summary>
+            Gets or Sets the health of the enemy.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameControl.Data.EnemyData.Damage">
+            <summary>
+            Gets or Sets the damage of the enemy.
+            </summary>
+        </member>
+        <member name="T:TowerDefense.GameControl.Data.PlayerScore">
+            <summary>
+            Class to represen player.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.Data.PlayerScore.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameControl.Data.PlayerScore"/> class.
+            </summary>
+            <param name="name">The name of the player.</param>
+            <param name="score">The score of the player.</param>
+        </member>
+        <member name="M:TowerDefense.GameControl.Data.PlayerScore.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameControl.Data.PlayerScore"/> class.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameControl.Data.PlayerScore.Name">
+            <summary>
+            Gets or Sets the name of the player.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameControl.Data.PlayerScore.Score">
+            <summary>
+            Gets or Sets the score of the player.
+            </summary>
+        </member>
+        <member name="T:TowerDefense.GameControl.Data.TowerData">
+            <summary>
+            Class that represents data for towers.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.Data.TowerData.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameControl.Data.TowerData"/> class.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameControl.Data.TowerData.TowerName">
+            <summary>
+            Gets or Sets the name of the tower.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameControl.Data.TowerData.TowerDamage">
+            <summary>
+            Gets or Sets the damage of the tower.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameControl.Data.TowerData.TowerRange">
+            <summary>
+            Gets or Sets the range of the tower.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameControl.Data.TowerData.TowerAttackSpeed">
+            <summary>
+            Gets or Sets the attack speed of the tower.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameControl.Data.TowerData.TowerPrice">
+            <summary>
+            Gets or Sets the price of the tower.
+            </summary>
+        </member>
+        <member name="T:TowerDefense.GameControl.ErrorOccuredEventArgs">
+            <summary>
+            Class for representing error event.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.ErrorOccuredEventArgs.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameControl.ErrorOccuredEventArgs"/> class.
+            </summary>
+            <param name="message">Error message.</param>
+        </member>
+        <member name="P:TowerDefense.GameControl.ErrorOccuredEventArgs.Message">
+            <summary>
+            Gets or sets the message about the error.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.ErrorOccuredEventArgs.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:TowerDefense.GameControl.GameIOC">
+            <summary>
+            Container helping with mapping, creating data connections.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameControl.GameIOC.Instance">
+            <summary>
+            Gets an instance of IOC.
+            </summary>
+        </member>
+        <member name="T:TowerDefense.GameControl.GControl">
+            <summary>
+            Control to manage game parts and interactions with it.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.GControl.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameControl.GControl"/> class.
+            </summary>
+        </member>
+        <member name="E:TowerDefense.GameControl.GControl.GameCreationErrorEvent">
+            <summary>
+            Event for indicating if an error occured.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameControl.GControl.IsNewGame">
+            <summary>
+            Gets or sets a value indicating whether this game is a new game or it will be loaded.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.GControl.OnRender(System.Windows.Media.DrawingContext)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TowerDefense.GameControl.Logic.ConvertModelData">
+            <summary>
+            Stataic class the helps converting between data.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.Logic.ConvertModelData.ConvertToTowerData(TowerDefense.GameModel.IEnemy)">
+            <summary>
+            Convert to enemy data.
+            </summary>
+            <param name="enemydata">The base model for the enemy.</param>
+            <returns>Returns an upper layer enemy data.</returns>
+        </member>
+        <member name="M:TowerDefense.GameControl.Logic.ConvertModelData.ConvertToTowerData(TowerDefense.GameModel.ITower)">
+            <summary>
+            Convert to tower data.
+            </summary>
+            <param name="tower">The base model for tower.</param>
+            <returns>Returns an upper layer tower data..</returns>
+        </member>
+        <member name="T:TowerDefense.GameControl.Logic.ConvertPlayerData">
+            <summary>
+            Converter class for converting database player into upper layer player.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.Logic.ConvertPlayerData.ConvertToPlayerData(TowerDefense.Repository.PlayerStats)">
+            <summary>
+            Converts PlayerStats to PlayerScore.
+            </summary>
+            <param name="dbPlayer">The player represented in database.</param>
+            <returns>Returns a PlayerScore.</returns>
+        </member>
+        <member name="T:TowerDefense.GameControl.Logic.IManualLogic">
+            <summary>
+            Interface for manual logic.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.Logic.IManualLogic.GetAllTowers">
+            <summary>
+            Gets all buildable towers.
+            </summary>
+            <returns>Returns a collection of Tower Data.</returns>
+        </member>
+        <member name="M:TowerDefense.GameControl.Logic.IManualLogic.GetAllEnemies">
+            <summary>
+            Gets all possible enemies.
+            </summary>
+            <returns>Returns a collection of Enemy Data.</returns>
+        </member>
+        <member name="T:TowerDefense.GameControl.Logic.IScoreBoardLogic">
+            <summary>
+            Logic interface for getting scoreboard.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameControl.Logic.IScoreBoardLogic.GLogic">
+            <summary>
+            Gets or Sets the logic of the game.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.Logic.IScoreBoardLogic.GetScores">
+            <summary>
+            Method for getting the scores.
+            </summary>
+            <returns>Returns a collection of PlayerScores.</returns>
+        </member>
+        <member name="M:TowerDefense.GameControl.Logic.IScoreBoardLogic.SaveGameCanBeLoaded">
+            <summary>
+            Method that decides if can be loaded.
+            </summary>
+            <returns>Returns true if saved game can be loaded, or false if it can not be loaded.</returns>
+        </member>
+        <member name="T:TowerDefense.GameControl.Logic.ManualLogic">
+            <summary>
+            Logic for handling manual window querrys.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.Logic.ManualLogic.#ctor(TowerDefense.GameLogic.IGameLogic)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameControl.Logic.ManualLogic"/> class.
+            </summary>
+            <param name="log">Game Logic.</param>
+        </member>
+        <member name="M:TowerDefense.GameControl.Logic.ManualLogic.GetAllEnemies">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameControl.Logic.ManualLogic.GetAllTowers">
+            <inheritdoc/>
+        </member>
+        <member name="T:TowerDefense.GameControl.Logic.ScoreBoardLogic">
+            <summary>
+            Logic for getting scoreboard.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.Logic.ScoreBoardLogic.#ctor(TowerDefense.GameLogic.IGameLogic)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameControl.Logic.ScoreBoardLogic"/> class.
+            </summary>
+            <param name="gamelog">Game logic used in game.</param>
+        </member>
+        <member name="P:TowerDefense.GameControl.Logic.ScoreBoardLogic.GLogic">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameControl.Logic.ScoreBoardLogic.GetScores">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameControl.Logic.ScoreBoardLogic.SaveGameCanBeLoaded">
+            <inheritdoc/>
+        </member>
+        <member name="T:TowerDefense.GameControl.View.GameWindow">
+            <summary>
+            Interaction logic for GameWindow.xaml.
+            </summary>
+            <summary>
+            GameWindow
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.View.GameWindow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameControl.View.GameWindow"/> class.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.View.GameWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:TowerDefense.GameControl.View.HighScoreWindow">
+            <summary>
+            Interaction logic for HighScoreWindow.xaml.
+            </summary>
+            <summary>
+            HighScoreWindow
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.View.HighScoreWindow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameControl.View.HighScoreWindow"/> class.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.View.HighScoreWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:TowerDefense.GameControl.View.InGameMenuWindow">
+            <summary>
+            Interaction logic for InGameMenuWindow.xaml.
+            </summary>
+            <summary>
+            InGameMenuWindow
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.View.InGameMenuWindow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameControl.View.InGameMenuWindow"/> class.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.View.InGameMenuWindow.#ctor(TowerDefense.GameLogic.IGameLogic)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameControl.View.InGameMenuWindow"/> class.
+            </summary>
+            <param name="logic">The game logic which can save the game state.</param>
+        </member>
+        <member name="M:TowerDefense.GameControl.View.InGameMenuWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:TowerDefense.GameControl.View.ManualWindow">
+            <summary>
+            Interaction logic for ManualWindow.xaml.
+            </summary>
+            <summary>
+            ManualWindow
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.View.ManualWindow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameControl.View.ManualWindow"/> class.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.View.ManualWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:TowerDefense.GameControl.View.OpeningWindow">
+            <summary>
+            Interaction logic for OpeningWindow.xaml.
+            </summary>
+            <summary>
+            OpeningWindow
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.View.OpeningWindow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameControl.View.OpeningWindow"/> class.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.View.OpeningWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:TowerDefense.GameControl.View.SaveHighScoreWindow">
+            <summary>
+            Interaction logic for SaveHighScoreWindow.xaml.
+            </summary>
+            <summary>
+            SaveHighScoreWindow
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.View.SaveHighScoreWindow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameControl.View.SaveHighScoreWindow"/> class.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.View.SaveHighScoreWindow.#ctor(TowerDefense.GameLogic.IGameLogic)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameControl.View.SaveHighScoreWindow"/> class.
+            </summary>
+            <param name="logic">Logic used in the game.</param>
+        </member>
+        <member name="P:TowerDefense.GameControl.View.SaveHighScoreWindow.Score">
+            <summary>
+            Gets the current score of the player.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.View.SaveHighScoreWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:TowerDefense.GameControl.VM.GameWindowViewModel">
+            <summary>
+            Game view model for game window.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.VM.GameWindowViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameControl.VM.GameWindowViewModel"/> class.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameControl.VM.GameWindowViewModel.CurrentGameControl">
+            <summary>
+            Gets or Sets the current game control.
+            </summary>
+        </member>
+        <member name="T:TowerDefense.GameControl.VM.ManualWindowViewModel">
+            <summary>
+            Manual window view model for handling data.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.VM.ManualWindowViewModel.#ctor(TowerDefense.GameControl.Logic.IManualLogic)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameControl.VM.ManualWindowViewModel"/> class.
+            </summary>
+            <param name="log">Manual logic.</param>
+        </member>
+        <member name="M:TowerDefense.GameControl.VM.ManualWindowViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameControl.VM.ManualWindowViewModel"/> class.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameControl.VM.ManualWindowViewModel.Towers">
+            <summary>
+            Gets the collection of all buildable towers.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameControl.VM.ManualWindowViewModel.Enemies">
+            <summary>
+            Gets the collection of all possible enemies.
+            </summary>
+        </member>
+        <member name="T:TowerDefense.GameControl.VM.ScoreViewModel">
+            <summary>
+            Score view model which can be used in window.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.VM.ScoreViewModel.#ctor(TowerDefense.GameControl.Logic.IScoreBoardLogic)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameControl.VM.ScoreViewModel"/> class.
+            </summary>
+            <param name="logic">Game Logic.</param>
+        </member>
+        <member name="M:TowerDefense.GameControl.VM.ScoreViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameControl.VM.ScoreViewModel"/> class.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameControl.VM.ScoreViewModel.Scores">
+            <summary>
+            Gets the collection of PlayerScores.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameControl.VM.ScoreViewModel.GameCanBeLoaded">
+            <summary>
+            Gets or sets a value indicating whether the game can be loaded.
+            </summary>
+            <returns>Returns true if game can be loaded.</returns>
+        </member>
+    </members>
+</doc>

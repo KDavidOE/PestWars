@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TowerDefense.GameLogic</name>
+    </assembly>
+    <members>
+        <member name="T:TowerDefense.GameLogic.IGameLogic">
+            <summary>
+            Describes an interface that can be used as game logic.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameLogic.IGameLogic.Update">
+            <summary>
+            Updates the model on every tick.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameLogic.IGameLogic.GameEnded">
+            <summary>
+            Returns if the game has already ended or not.
+            </summary>
+            <returns>Whether the game has already ended.</returns>
+        </member>
+        <member name="M:TowerDefense.GameLogic.IGameLogic.GameLost">
+            <summary>
+            Returns whether the game is lost or not.
+            </summary>
+            <returns>Whether the game is lost.</returns>
+        </member>
+        <member name="M:TowerDefense.GameLogic.IGameLogic.MoveEnemies">
+            <summary>
+            Moves all enemies closer to the base.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameLogic.IGameLogic.AttackWithTowers">
+            <summary>
+            Spawns and moves projectiles.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameLogic.IGameLogic.SpawnNewWave">
+            <summary>
+            Spawns a new wave of enemies after the last ended.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameLogic.IGameLogic.CheckWaveEnded">
+            <summary>
+            Checks if the previous wave has already ended.
+            </summary>
+            <returns>If the wave already ended.</returns>
+        </member>
+        <member name="M:TowerDefense.GameLogic.IGameLogic.SelectTower(System.Windows.Point)">
+            <summary>
+            Allows the user to select a new tower.
+            </summary>
+            <param name="mousePos">The point at which the user has clicked.</param>
+        </member>
+        <member name="M:TowerDefense.GameLogic.IGameLogic.AddTower(System.Windows.Point)">
+            <summary>
+            Puts a new tower on the map.
+            </summary>
+            <param name="mousePos">The position of the mouse.</param>
+            <returns>Whether the placement was successful or not.</returns>
+        </member>
+        <member name="M:TowerDefense.GameLogic.IGameLogic.PauseOrResumeGame">
+            <summary>
+            Pauses or resumes the game.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameLogic.IGameLogic.CreateNewGame">
+            <summary>
+            Creates a new game.
+            </summary>
+        </member>
+        <member name="M:TowerDefense.GameLogic.IGameLogic.SaveGame">
+            <summary>
+            Saves the game.
+            </summary>
+            <returns>If the save was successful or not.</returns>
+        </member>
+        <member name="M:TowerDefense.GameLogic.IGameLogic.LoadGame">
+            <summary>
+            Loads the game.
+            </summary>
+            <returns>Whether the load was sucessful or not.</returns>
+        </member>
+        <member name="M:TowerDefense.GameLogic.IGameLogic.SaveHighscore(System.String)">
+            <summary>
+            Saves the high score.
+            </summary>
+            <returns>If the save was successful or not.</returns>
+            <param name="name">The name of the player.</param>
+        </member>
+        <member name="M:TowerDefense.GameLogic.IGameLogic.LoadHighscore">
+            <summary>
+            Loads the high score.
+            </summary>
+            <returns>If the load was successful or not.</returns>
+        </member>
+        <member name="M:TowerDefense.GameLogic.IGameLogic.GetHighScores">
+            <summary>
+            Returns the player's score.
+            </summary>
+            <returns>The current score of the player.</returns>
+        </member>
+        <member name="M:TowerDefense.GameLogic.IGameLogic.GetAvailableEnemies">
+            <summary>
+            Returns the list of possible enemies.
+            </summary>
+            <returns>A dictionary of possible enemies.</returns>
+        </member>
+        <member name="M:TowerDefense.GameLogic.IGameLogic.GetAvailableTowers">
+            <summary>
+            Returns the list of possible towers.
+            </summary>
+            <returns>A dictionary with the available towers.</returns>
+        </member>
+        <member name="M:TowerDefense.GameLogic.IGameLogic.GetCurrentScore">
+            <summary>
+            Gets the currents score of the game.
+            </summary>
+            <returns>The current score of the game.</returns>
+        </member>
+        <member name="T:TowerDefense.GameLogic.MainGameLogic">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameLogic.MainGameLogic.#ctor(TowerDefense.Repository.IStorageRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TowerDefense.GameLogic.MainGameLogic"/> class.
+            </summary>
+            <param name="repo">The repostiory used for the game.</param>
+        </member>
+        <member name="M:TowerDefense.GameLogic.MainGameLogic.SelectTower(System.Windows.Point)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameLogic.MainGameLogic.AddTower(System.Windows.Point)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameLogic.MainGameLogic.AttackWithTowers">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameLogic.MainGameLogic.CheckWaveEnded">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameLogic.MainGameLogic.LoadGame">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameLogic.MainGameLogic.LoadHighscore">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameLogic.MainGameLogic.GetCurrentScore">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameLogic.MainGameLogic.MoveEnemies">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameLogic.MainGameLogic.PauseOrResumeGame">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameLogic.MainGameLogic.SaveGame">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameLogic.MainGameLogic.SaveHighscore(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameLogic.MainGameLogic.SpawnNewWave">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameLogic.MainGameLogic.Update">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameLogic.MainGameLogic.GetHighScores">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameLogic.MainGameLogic.GetAvailableEnemies">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameLogic.MainGameLogic.GetAvailableTowers">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameLogic.MainGameLogic.CreateNewGame">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameLogic.MainGameLogic.GameEnded">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameLogic.MainGameLogic.GameLost">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>
