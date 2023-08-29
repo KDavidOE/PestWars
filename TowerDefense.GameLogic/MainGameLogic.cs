@@ -311,8 +311,10 @@ namespace TowerDefense.GameLogic
                 yMapPos = (int)(translatedY / this.Model.TileSize);
                 int inTileX = (int)(translatedX % this.Model.TileSize);
                 int inTileY = (int)(translatedY % this.Model.TileSize);
+                bool insideMap = (yMapPos - dY >= 0 && xMapPos - dX >= 0) &&
+                    (yMapPos - dY < this.Model.Map.GetLength(0) && xMapPos - dX < this.Model.Map.GetLength(1));
 
-                try
+                if (insideMap)
                 {
                     if (this.Model.Map[yMapPos, xMapPos] != this.Model.Map[yMapPos - dY, xMapPos - dX])
                     {
@@ -338,9 +340,6 @@ namespace TowerDefense.GameLogic
                                 break;
                         }
                     }
-                }
-                catch (IndexOutOfRangeException)
-                {
                 }
 
                 if (xMapPos == this.Model.EndPoint.X && yMapPos == this.Model.EndPoint.Y)
