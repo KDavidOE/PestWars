@@ -124,5 +124,17 @@ namespace TowerDefense.GameLogic
         /// </summary>
         /// <returns>The current score of the game.</returns>
         int GetCurrentScore();
+
+        /// <summary>
+        /// Gets the current refresh rate of the game.
+        /// </summary>
+        /// <returns>Returns the integer value of the refresh rate.</returns>
+        int GetRefreshRate();
+
+        /// <summary>
+        /// Returns whether the game is paused.
+        /// </summary>
+        /// <returns> Returns the integer value of the refresh rate.</returns>>
+        public bool IsPaused();
     }
 }

@@ -11,6 +11,7 @@ namespace TowerDefense.GameLogic
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Diagnostics;
     using System.Linq;
     using System.Windows;
     using TowerDefense.GameModel;
@@ -123,7 +124,8 @@ namespace TowerDefense.GameLogic
                 this.Model.Map[candidateY, candidateX] = Map.OCCUPIED;
             }
 
-            this.Model.Towers.Add(tower);
+            this.Model.TowerQueue.Enqueue(tower);
+            //this.Model.Towers.Add(tower);
             this.Model.Money -= tower.Price;
             this.Model.SelectedTower = null;
 
@@ -401,6 +403,7 @@ namespace TowerDefense.GameLogic
         /// <inheritdoc/>
         public void Update()
         {
+            this.UpdateTowers();
             this.SpawnNewWave();
             this.TickTimers();
             this.AttackWithTowers();
@@ -441,6 +444,18 @@ namespace TowerDefense.GameLogic
         public bool GameLost()
         {
             return this.Model.BaseHealth <= 0;
+        }
+
+        /// <inheritdoc/>
+        public int GetRefreshRate()
+        {
+            return this.Model.RefreshRate;
+        }
+
+        /// <inheritdoc/>
+        public bool IsPaused()
+        {
+            return this.Model.IsPaused;
         }
 
         private void SpawnEnemy(bool isNecro)
@@ -645,6 +660,15 @@ namespace TowerDefense.GameLogic
                 case TowerType.Water:
                 default:
                     break;
+            }
+        }
+
+        private void UpdateTowers()
+        {
+            while (this.Model.TowerQueue.Count != 0)
+            {
+                ITower tower = this.Model.TowerQueue.Dequeue();
+                this.Model.Towers.Add(tower);
             }
         }
     }
