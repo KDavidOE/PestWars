@@ -8,6 +8,7 @@ namespace TowerDefense.GameControl
     using System.ComponentModel;
     using System.Diagnostics;
     using System.Linq;
+    using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Media;
     using System.Windows.Threading;
@@ -20,14 +21,16 @@ namespace TowerDefense.GameControl
     /// <summary>
     /// Control to manage game parts and interactions with it.
     /// </summary>
-    public class GControl : FrameworkElement
+    public class GControl : FrameworkElement, IDisposable
     {
         private IGameModel model;
         private IStorageRepository repo;
         private IGameLogic logic;
         private Renderer renderer;
         private Stopwatch stw;
-        private DispatcherTimer timer;
+        private Task gameThread;
+        private bool terminateGame;
+        private bool isDisposed;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GControl"/> class.
@@ -48,6 +51,13 @@ namespace TowerDefense.GameControl
         public bool IsNewGame { get; set; } = true;
 
         /// <inheritdoc/>
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        /// <inheritdoc/>
         protected override void OnRender(DrawingContext drawingContext)
         {
             if (this.renderer != null)
@@ -61,8 +71,27 @@ namespace TowerDefense.GameControl
             }
         }
 
+        /// <summary>
+        /// Disposing managed objects.
+        /// </summary>
+        /// <param name="disposing">Parameter of disposing.</param>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.isDisposed)
+            {
+                this.isDisposed = true;
+
+                if (disposing)
+                {
+                    this.gameThread.Dispose();
+                    this.gameThread = null;
+                }
+            }
+        }
+
         private void GameControl_Loaded(object sender, RoutedEventArgs e)
         {
+            Debug.WriteLine("Window intit");
             double width;
             double height;
             width = 1920;
@@ -97,19 +126,22 @@ namespace TowerDefense.GameControl
                 }
             }
 
-            this.timer = new DispatcherTimer
+            this.gameThread = new Task(() =>
             {
-                Interval = TimeSpan.FromMilliseconds(1000 / this.model.RefreshRate),
-            };
-            this.timer.Tick += this.Timer_Tick;
-            this.timer.Start();
+                while (!this.terminateGame)
+                {
+                    this.Timer_Tick();
+
+                    Task.Delay(TimeSpan.FromMilliseconds(1000 / this.logic.GetRefreshRate())).Wait();
+                }
+            });
+            this.gameThread.Start();
 
             this.renderer = new Renderer(this.model);
             Window win = Window.GetWindow(this);
             if (win != null)
             {
                 win.KeyDown += this.Win_KeyDown;
-                win.Closed += this.Win_Closed;
                 win.MouseDown += this.Win_MouseDown;
             }
 
@@ -123,22 +155,19 @@ namespace TowerDefense.GameControl
             this.logic.AddTower(position);
         }
 
-        private void Timer_Tick(object sender, EventArgs e)
+        private void Timer_Tick()
         {
-            if (!this.model.IsPaused && !this.logic.GameLost())
+            if (!this.logic.IsPaused() && !this.logic.GameLost())
             {
                 this.logic.Update();
                 this.logic.SpawnNewWave();
-                this.InvalidateVisual();
+                this.Dispatcher.Invoke(() => this.InvalidateVisual());
             }
-
             if (this.logic.GameEnded())
             {
                 if (!this.logic.GameLost())
                 {
-                    Window win = new SaveHighScoreWindow(this.logic);
-                    win.ShowDialog();
-                    Window.GetWindow(this).DialogResult = true;
+                    this.Dispatcher?.Invoke(() => this.InitSaveHighScoreWindow());
                 }
 
                 this.stw.Stop();
@@ -147,7 +176,6 @@ namespace TowerDefense.GameControl
 
         private void Win_Closed(object sender, System.EventArgs e)
         {
-            this.timer.Tick -= this.Timer_Tick;
         }
 
         private void Win_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
@@ -159,6 +187,7 @@ namespace TowerDefense.GameControl
                 random.Activate();
                 if (random.ShowDialog().Value == false)
                 {
+                    this.terminateGame = true;
                     Window.GetWindow(this).DialogResult = true;
                 }
 
@@ -171,6 +200,13 @@ namespace TowerDefense.GameControl
                     Window.GetWindow(this).DialogResult = true;
                 }
             }
+        }
+
+        private void InitSaveHighScoreWindow()
+        {
+            Window win = new SaveHighScoreWindow(this.logic);
+            win.ShowDialog();
+            Window.GetWindow(this).DialogResult = true;
         }
     }
 }
