@@ -6,6 +6,7 @@ namespace TowerDefense.GameModel
 {
     using System.Collections.Generic;
     using System.Drawing;
+    using System.Linq;
 
     /// <summary>
     /// Interface for game model for declaring necessery variables for the game.
@@ -21,6 +22,11 @@ namespace TowerDefense.GameModel
         /// Gets a collection of towers.
         /// </summary>
         IList<ITower> Towers { get;  }
+
+        /// <summary>
+        /// Gets a collection of towers.
+        /// </summary>
+        Queue<ITower> TowerQueue { get; }
 
         /// <summary>
         /// Gets or Sets the position of the starting point where enemies are coming from.

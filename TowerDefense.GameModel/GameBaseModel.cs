@@ -24,10 +24,11 @@ namespace TowerDefense.GameModel
             this.Towers = new List<ITower>();
             this.GameWidth = gamewidth;
             this.GameHeight = gameheight;
-            this.BaseHealth = 100;
+            this.BaseHealth = 1;
             this.Money = 1500;
             this.Score = 0;
             this.MapShopRatio = 0.8;
+            this.TowerQueue = new Queue<ITower>();
         }
 
         /// <inheritdoc/>
@@ -107,5 +108,8 @@ namespace TowerDefense.GameModel
 
         /// <inheritdoc/>
         public Dictionary<EnemyType, IEnemy> AvailableEnemies { get; private set; } = new Dictionary<EnemyType, IEnemy>();
+
+        /// <inheritdoc/>
+        public Queue<ITower> TowerQueue { get; private set; }
     }
 }

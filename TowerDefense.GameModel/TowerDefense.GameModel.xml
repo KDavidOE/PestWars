@@ -136,6 +136,9 @@
         <member name="P:TowerDefense.GameModel.GameBaseModel.AvailableEnemies">
             <inheritdoc/>
         </member>
+        <member name="P:TowerDefense.GameModel.GameBaseModel.TowerQueue">
+            <inheritdoc/>
+        </member>
         <member name="T:TowerDefense.GameModel.IEnemy">
             <summary>
             Interface for enemies to declare necessery variables.
@@ -198,6 +201,11 @@
             </summary>
         </member>
         <member name="P:TowerDefense.GameModel.IGameModel.Towers">
+            <summary>
+            Gets a collection of towers.
+            </summary>
+        </member>
+        <member name="P:TowerDefense.GameModel.IGameModel.TowerQueue">
             <summary>
             Gets a collection of towers.
             </summary>

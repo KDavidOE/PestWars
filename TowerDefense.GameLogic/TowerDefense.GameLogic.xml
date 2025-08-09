@@ -119,6 +119,18 @@
             </summary>
             <returns>The current score of the game.</returns>
         </member>
+        <member name="M:TowerDefense.GameLogic.IGameLogic.GetRefreshRate">
+            <summary>
+            Gets the current refresh rate of the game.
+            </summary>
+            <returns>Returns the integer value of the refresh rate.</returns>
+        </member>
+        <member name="M:TowerDefense.GameLogic.IGameLogic.IsPaused">
+            <summary>
+            Returns whether the game is paused.
+            </summary>
+            <returns> Returns the integer value of the refresh rate.</returns>>
+        </member>
         <member name="T:TowerDefense.GameLogic.MainGameLogic">
             <inheritdoc/>
         </member>
@@ -183,6 +195,12 @@
             <inheritdoc/>
         </member>
         <member name="M:TowerDefense.GameLogic.MainGameLogic.GameLost">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameLogic.MainGameLogic.GetRefreshRate">
+            <inheritdoc/>
+        </member>
+        <member name="M:TowerDefense.GameLogic.MainGameLogic.IsPaused">
             <inheritdoc/>
         </member>
     </members>
